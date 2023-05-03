@@ -265,22 +265,23 @@
     assign io_oeb[32]       = 1'b0;                 // Output
 
     // PSRAM CTRL
-    assign io_out[31]       = psram_ce_n;
-    assign io_oeb[31]       = 1'b0;
-    assign io_out[30]       = psram_sck;
-    assign io_oeb[30]       = 1'b0;
-    assign io_out[29]       = psram_dout[0];
-    assign io_oeb[29]       = ~psram_douten[0];
-    assign psram_din[0]     = io_in[29];
-    assign io_out[28]       = psram_dout[1];
-    assign io_oeb[28]       = ~psram_douten[1];
-    assign psram_din[1]     = io_in[28];
-    assign io_out[27]       = psram_dout[2];
-    assign io_oeb[27]       = ~psram_douten[2];
-    assign psram_din[2]     = io_in[27];
-    assign io_out[26]       = psram_dout[3];
-    assign io_oeb[26]       = ~psram_douten[3];
-    assign psram_din[3]     = io_in[26];
+    // PSRAM 
+    assign io_out[31]       = psram_ce_n;           // I/O 31
+    assign io_oeb[31]       = 1'b0;                 // Output
+    assign io_out[30]       = psram_sck;            // I/O 31
+    assign io_oeb[30]       = 1'b0;                 // Output
+    assign io_out[26]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
+    assign io_oeb[26]       = ~psram_douten[0];
+    assign psram_din[0]     = io_in[26];
+    assign io_out[27]       = psram_dout[1];
+    assign io_oeb[27]       = ~psram_douten[1];
+    assign psram_din[1]     = io_in[27];
+    assign io_out[28]       = psram_dout[2];
+    assign io_oeb[28]       = ~psram_douten[2];
+    assign psram_din[2]     = io_in[28];
+    assign io_out[29]       = psram_dout[3];
+    assign io_oeb[29]       = ~psram_douten[3];
+    assign psram_din[3]     = io_in[29];
 
 endmodule	// user_project_wrapper
 
