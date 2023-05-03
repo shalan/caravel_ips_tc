@@ -116,11 +116,11 @@
     wire `REAL VRp;
     wire `REAL VRm;
 
-    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b000); // 0x30000000
-    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b001); // 0x30020000
-    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b010); // 0x30040000
-    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b100); // 0x30080000
-    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b101); // 0x300A0000
+    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0000); // 0x30000000
+    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0010); // 0x30020000
+    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0100); // 0x30040000
+    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b1000); // 0x30080000
+    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b1010); // 0x300A0000
     
     assign      wbs_ack_o       =   wbs_stb_tmr_i   ? wbs_ack_tmr_o     :
                                     wbs_stb_uart_i  ? wbs_ack_uart_o    :
