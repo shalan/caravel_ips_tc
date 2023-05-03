@@ -116,12 +116,11 @@
     wire `REAL VRp;
     wire `REAL VRm;
 
-
-    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b000);  
-    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b001);  
-    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b010);  
-    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b100); 
-    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b101); 
+    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b000); // 0x30000000
+    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b001); // 0x30020000
+    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b010); // 0x30040000
+    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b100); // 0x30080000
+    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b101); // 0x300A0000
     
     assign      wbs_ack_o       =   wbs_stb_tmr_i   ? wbs_ack_tmr_o     :
                                     wbs_stb_uart_i  ? wbs_ack_uart_o    :
@@ -139,14 +138,14 @@
 
     ms_psram_ctrl_wb psram (
     `ifdef USE_POWER_PINS
-        .vccd1(vccd1),	// User area 1 1.8V power
-        .vssd1(vssd1),	// User area 1 digital ground
+        // .vccd1(vccd1),	// User area 1 1.8V power
+        // .vssd1(vssd1),	// User area 1 digital ground
     `endif
-        .clk_i(wbs_clk_i),
-        .rst_i(wbs_rst_i),
-        .adr_i(wbs_addr_i),
+        .clk_i(wb_clk_i),
+        .rst_i(wb_rst_i),
+        .adr_i(wbs_adr_i),
         .dat_i(wbs_dat_i),
-        .dat_o(wbs_dat_o),
+        .dat_o(wbs_dat_psram_o),
         .sel_i(wbs_sel_i),
         .cyc_i(wbs_cyc_i),
         .stb_i(wbs_stb_psram_i),
@@ -162,14 +161,14 @@
 
     ms_tmr32_wb timer (
     `ifdef USE_POWER_PINS
-        .vccd1(vccd1),	// User area 1 1.8V power
-        .vssd1(vssd1),	// User area 1 digital ground
+        // .vccd1(vccd1),	// User area 1 1.8V power
+        // .vssd1(vssd1),	// User area 1 digital ground
     `endif
-        .clk_i(wbs_clk_i),
-        .rst_i(wbs_rst_i),
+        .clk_i(wb_clk_i),
+        .rst_i(wb_rst_i),
         .adr_i(wbs_adr_i),
         .dat_i(wbs_dat_i),
-        .dat_o(wbs_dat_o),
+        .dat_o(wbs_dat_tmr_o),
         .sel_i(wbs_sel_i),
         .cyc_i(wbs_cyc_i),
         .stb_i(wbs_stb_tmr_i),
@@ -183,11 +182,11 @@
     );
 
     ms_uart_wb uart (
-        .clk_i(wbs_clk_i),
-        .rst_i(wbs_rst_i),
+        .clk_i(wb_clk_i),
+        .rst_i(wb_rst_i),
         .adr_i(wbs_adr_i),
         .dat_i(wbs_dat_i),
-        .dat_o(wbs_dat_o),
+        .dat_o(wbs_dat_uart_o),
         .sel_i(wbs_sel_i),
         .cyc_i(wbs_cyc_i),
         .stb_i(wbs_stb_uart_i),
@@ -216,7 +215,7 @@
         .bus_dat_r(wbs_dat_dac_o),
         .bus_sel(wbs_sel_i),
         .bus_cyc(wbs_cyc_i),
-        .bus_stb(wbs_stb_dac),
+        .bus_stb(wbs_stb_dac_i),
         .bus_ack(wbs_ack_dac_o),
         .bus_we(wbs_we_i),
         .sys_clk(wb_clk_i),
@@ -239,7 +238,7 @@
         .bus_dat_r(wbs_dat_adc_o),
         .bus_sel(wbs_sel_i),
         .bus_cyc(wbs_cyc_i),
-        .bus_stb(wbs_stb_adc),
+        .bus_stb(wbs_stb_adc_i),
         .bus_ack(wbs_ack_adc_o),
         .bus_we(wbs_we_i),
         .sys_clk(wb_clk_i),
