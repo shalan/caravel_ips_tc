@@ -3,7 +3,7 @@ from cocotb.triggers import ClockCycles
 from ms_uart.ms_uart import MsUart
 
 @cocotb.test()
-@repot_test
+@report_test
 async def uart_rx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=79222)
     ms_uart = MsUart(caravelEnv=caravelEnv, prescaler=0)
