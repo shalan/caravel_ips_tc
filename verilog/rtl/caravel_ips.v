@@ -68,10 +68,10 @@
     inout [`MPRJ_IO_PADS-10:0] analog_io,
 
     // Independent clock (on independent integer divider)
-    input   user_clock2,
+    input   clock2,
 
     // User maskable interrupt signals
-    output [2:0] user_irq
+    output [2:0] irq
 );
     wire [31:0] wbs_dat_tmr_o, 
                 wbs_dat_uart_o, 
