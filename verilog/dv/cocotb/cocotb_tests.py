@@ -5,3 +5,4 @@ from ms_uart.uart_rx_irq.uart_rx_irq import uart_rx_irq
 from ms_timer.counter.counter import counter
 from ms_timer.timer.timer import timer
 from ms_timer.timer.timer import timer_irq
+from ms_timer.pwm.pwm import pwm

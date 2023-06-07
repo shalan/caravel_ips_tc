@@ -12,9 +12,9 @@ void TMR_tmrEn(bool is_en){
 }
 void TMR_pwmEn(bool is_en){
     if (is_en)
-        (*(volatile int*)(ms_timer_base + 0x100)) |= 0x5;
+        (*(volatile int*)(ms_timer_base + 0x100)) |= 0x7;
     else
-        (*(volatile int*)(ms_timer_base + 0x100)) &= ~0x5;
+        (*(volatile int*)(ms_timer_base + 0x100)) &= ~0x7;
 }
 
 void TMR_cpEn(bool is_en){
@@ -53,7 +53,7 @@ void TMR_setCounterMatch(int match){
     *(volatile int*)(ms_timer_base + 0x0C) = match;
 }
 
-void TMR_setPWM(int duty_cycle){
+void TMR_setPWM_dutyCycle(int duty_cycle){
     *(volatile int*)(ms_timer_base + 0x08) = duty_cycle;
 }
 
