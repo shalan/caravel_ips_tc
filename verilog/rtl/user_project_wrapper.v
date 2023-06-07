@@ -102,12 +102,6 @@ caravel_ips mprj (
     .wbs_ack_o(wbs_ack_o),
     .wbs_dat_o(wbs_dat_o),
 
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
-
     // IO Pads
 
     .io_in (io_in[35:26]),
