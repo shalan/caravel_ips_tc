@@ -100,7 +100,7 @@ caravel_ips mprj (
     .wbs_adr_i(wbs_adr_i),
     .wbs_dat_i(wbs_dat_i),
     .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+    .wbs_dat_o(wbs_dat_o)
 
     // Logic Analyzer
 
@@ -115,7 +115,7 @@ caravel_ips mprj (
     .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
 
     // IRQ
-    .user_irq(user_irq)
+    .irq(user_irq)
 );
 
 endmodule	// user_project_wrapper
