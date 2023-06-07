@@ -1,18 +1,9 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_defines.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
+-v $(USER_PROJECT_VERILOG)/rtl/caravel_ips.v
 -v $(USER_PROJECT_VERILOG)/../ips/ms_psram_ctrl/src/rtl/ms_psram_ctrl_wb.v
 -v $(USER_PROJECT_VERILOG)/../ips/ms_tmr32/src/rtl/ms_tmr32_wb.v
 -v $(USER_PROJECT_VERILOG)/../ips/ms_tmr32/src/rtl/ms_tmr32.v
 -v $(USER_PROJECT_VERILOG)/../ips/ms_uart/src/rtl/ms_uart_wb.v
 -v $(USER_PROJECT_VERILOG)/../ips/ms_uart/src/rtl/ms_uart.v
-# DAC and ADC
--v $(USER_PROJECT_VERILOG)/rtl/ADC/adc8_wb_wrapper.v
--v $(USER_PROJECT_VERILOG)/rtl/ADC/comparator_top.v
--v $(USER_PROJECT_VERILOG)/rtl/ADC/sample_and_hold.v
--v $(USER_PROJECT_VERILOG)/rtl/ADC/SAR_ADC.v
--v $(USER_PROJECT_VERILOG)/rtl/ADC/sar.v
--v $(USER_PROJECT_VERILOG)/rtl/DAC/dac_3v_8bit.v
--v $(USER_PROJECT_VERILOG)/rtl/DAC/dac_wrapper.v
--v $(USER_PROJECT_VERILOG)/rtl/DAC/dac8_wb_wrapper.v
-
