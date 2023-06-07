@@ -52,9 +52,9 @@
     output [31:0]   wbs_dat_o,
 
     // IOs
-    input  [37:28] io_in,
-    output [37:28] io_out,
-    output [37:28] io_oeb,
+    input  [9:0] io_in,
+    output [9:0] io_out,
+    output [9:0] io_oeb,
 
     // User maskable interrupt signals
     output [2:0] irq
@@ -151,35 +151,35 @@
     );
 
     // UART
-    assign uart_rx          = io_in[35];            // I/O 35
-    assign io_oeb[35]       = 1'b1;                 // Input
-    assign io_out[34]       = uart_tx;              // I/O 34
-    assign io_oeb[34]       = 1'b0;                 // Output
+    assign uart_rx          = io_in[7];            // I/O 35
+    assign io_oeb[7]       = 1'b1;                 // Input
+    assign io_out[6]       = uart_tx;              // I/O 34
+    assign io_oeb[6]       = 1'b0;                 // Output
 
     // Timer
-    assign ctr_in           = io_in[33];            // I/O 33
-    assign io_oeb[33]       = 1'b1;                 // Input
-    assign io_out[32]       = pwm_out;              // I/O 32
-    assign io_oeb[32]       = 1'b0;                 // Output
+    assign ctr_in           = io_in[5];            // I/O 33
+    assign io_oeb[5]       = 1'b1;                 // Input
+    assign io_out[4]       = pwm_out;              // I/O 32
+    assign io_oeb[4]       = 1'b0;                 // Output
 
     // PSRAM CTRL
     // PSRAM 
-    assign io_out[31]       = psram_ce_n;           // I/O 31
-    assign io_oeb[31]       = 1'b0;                 // Output
-    assign io_out[30]       = psram_sck;            // I/O 31
-    assign io_oeb[30]       = 1'b0;                 // Output
-    assign io_out[36]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
-    assign io_oeb[36]       = ~psram_douten[0];
+    assign io_out[3]       = psram_ce_n;           // I/O 31
+    assign io_oeb[3]       = 1'b0;                 // Output
+    assign io_out[2]       = psram_sck;            // I/O 31
+    assign io_oeb[2]       = 1'b0;                 // Output
+    assign io_out[8]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
+    assign io_oeb[8]       = ~psram_douten[0];
     assign psram_din[0]     = io_in[26];
-    assign io_out[37]       = psram_dout[1];
-    assign io_oeb[37]       = ~psram_douten[1];
+    assign io_out[9]       = psram_dout[1];
+    assign io_oeb[9]       = ~psram_douten[1];
     assign psram_din[1]     = io_in[27];
-    assign io_out[28]       = psram_dout[2];
-    assign io_oeb[28]       = ~psram_douten[2];
-    assign psram_din[2]     = io_in[28];
-    assign io_out[29]       = psram_dout[3];
-    assign io_oeb[29]       = ~psram_douten[3];
-    assign psram_din[3]     = io_in[29];
+    assign io_out[0]       = psram_dout[2];
+    assign io_oeb[0]       = ~psram_douten[2];
+    assign psram_din[2]     = io_in[0];
+    assign io_out[1]       = psram_dout[3];
+    assign io_oeb[1]       = ~psram_douten[3];
+    assign psram_din[3]     = io_in[1];
 
 endmodule	// caravel_ips
 
