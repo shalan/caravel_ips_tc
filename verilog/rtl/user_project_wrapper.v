@@ -104,9 +104,9 @@ caravel_ips mprj (
 
     // IO Pads
 
-    .io_in (io_in[35:26]),
-    .io_out(io_out[35:26]),
-    .io_oeb(io_oeb[35:26]),
+    .io_in (io_in[37:28]),
+    .io_out(io_out[37:28]),
+    .io_oeb(io_oeb[37:28]),
 
     // IRQ
     .irq(user_irq)

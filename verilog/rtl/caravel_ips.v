@@ -52,9 +52,9 @@
     output [31:0]   wbs_dat_o,
 
     // IOs
-    input  [35:26] io_in,
-    output [35:26] io_out,
-    output [35:26] io_oeb,
+    input  [37:28] io_in,
+    output [37:28] io_out,
+    output [37:28] io_oeb,
 
     // User maskable interrupt signals
     output [2:0] irq
@@ -168,11 +168,11 @@
     assign io_oeb[31]       = 1'b0;                 // Output
     assign io_out[30]       = psram_sck;            // I/O 31
     assign io_oeb[30]       = 1'b0;                 // Output
-    assign io_out[26]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
-    assign io_oeb[26]       = ~psram_douten[0];
+    assign io_out[36]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
+    assign io_oeb[36]       = ~psram_douten[0];
     assign psram_din[0]     = io_in[26];
-    assign io_out[27]       = psram_dout[1];
-    assign io_oeb[27]       = ~psram_douten[1];
+    assign io_out[37]       = psram_dout[1];
+    assign io_oeb[37]       = ~psram_douten[1];
     assign psram_din[1]     = io_in[27];
     assign io_out[28]       = psram_dout[2];
     assign io_oeb[28]       = ~psram_douten[2];
