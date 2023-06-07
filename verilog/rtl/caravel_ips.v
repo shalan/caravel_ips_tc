@@ -143,7 +143,7 @@
         .ctr_in(ctr_in),
         .pwm_out(pwm_out),
         
-        .irq(user_irq[0])
+        .irq(irq[0])
     );
 
     ms_uart_wb uart (
@@ -161,7 +161,7 @@
         .RX(uart_rx),
         .TX(uart_tx),
 
-        .irq(user_irq[1])
+        .irq(irq[1])
     );
 
     // UART
