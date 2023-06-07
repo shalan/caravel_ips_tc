@@ -116,11 +116,11 @@
     wire `REAL VRp;
     wire `REAL VRm;
 
-    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b000); // 0x30000000
-    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b001); // 0x30020000
-    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b010); // 0x30040000
-    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b100); // 0x30080000
-    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:17] == 3'b101); // 0x300A0000
+    assign      wbs_stb_tmr_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0000); // 0x30000000
+    assign      wbs_stb_uart_i  =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0010); // 0x30020000
+    assign      wbs_stb_psram_i =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b0100); // 0x30040000
+    assign      wbs_stb_dac_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b1000); // 0x30080000
+    assign      wbs_stb_adc_i   =   wbs_stb_i & (wbs_adr_i[19:16] == 4'b1010); // 0x300A0000
     
     assign      wbs_ack_o       =   wbs_stb_tmr_i   ? wbs_ack_tmr_o     :
                                     wbs_stb_uart_i  ? wbs_ack_uart_o    :
@@ -265,22 +265,23 @@
     assign io_oeb[32]       = 1'b0;                 // Output
 
     // PSRAM CTRL
-    assign io_out[31]       = psram_ce_n;
-    assign io_oeb[31]       = 1'b0;
-    assign io_out[30]       = psram_sck;
-    assign io_oeb[30]       = 1'b0;
-    assign io_out[29]       = psram_dout[0];
-    assign io_oeb[29]       = ~psram_douten[0];
-    assign psram_din[0]     = io_in[29];
-    assign io_out[28]       = psram_dout[1];
-    assign io_oeb[28]       = ~psram_douten[1];
-    assign psram_din[1]     = io_in[28];
-    assign io_out[27]       = psram_dout[2];
-    assign io_oeb[27]       = ~psram_douten[2];
-    assign psram_din[2]     = io_in[27];
-    assign io_out[26]       = psram_dout[3];
-    assign io_oeb[26]       = ~psram_douten[3];
-    assign psram_din[3]     = io_in[26];
+    // PSRAM 
+    assign io_out[31]       = psram_ce_n;           // I/O 31
+    assign io_oeb[31]       = 1'b0;                 // Output
+    assign io_out[30]       = psram_sck;            // I/O 31
+    assign io_oeb[30]       = 1'b0;                 // Output
+    assign io_out[26]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
+    assign io_oeb[26]       = ~psram_douten[0];
+    assign psram_din[0]     = io_in[26];
+    assign io_out[27]       = psram_dout[1];
+    assign io_oeb[27]       = ~psram_douten[1];
+    assign psram_din[1]     = io_in[27];
+    assign io_out[28]       = psram_dout[2];
+    assign io_oeb[28]       = ~psram_douten[2];
+    assign psram_din[2]     = io_in[28];
+    assign io_out[29]       = psram_dout[3];
+    assign io_oeb[29]       = ~psram_douten[3];
+    assign psram_din[3]     = io_in[29];
 
 endmodule	// user_project_wrapper
 
