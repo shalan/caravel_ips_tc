@@ -44,9 +44,22 @@ void TMR_timerOneShot(bool is_one_shot){
 }
 
 void TMR_setCpEvent(int cp_event){
-    int tmp = cp_event << 23;
-    tmp = tmp & 0x6000000;
+    // cp event 
+    *(volatile int*)(ms_timer_base + 0x100) &= ~0x3000000;
+    int tmp = cp_event << 24;
+    tmp = tmp & 0x3000000;
     *(volatile int*)(ms_timer_base + 0x100) |= tmp;
+}
+
+void TMR_captureRising(){
+    TMR_setCpEvent(0x1);
+}
+
+void TMR_captureFalling(){
+    TMR_setCpEvent(0x2);
+}
+void TMR_captureBoth(){
+    TMR_setCpEvent(0x3);
 }
 
 void TMR_setCounterMatch(int match){
@@ -63,6 +76,10 @@ void TMR_setTimerPeriod(int period){
 
 int TMR_getTimerPeriod(){
     return *(volatile int*)(ms_timer_base + 0x00);
+}
+
+int TMR_getCounterVal(){
+    return *(volatile int*)(ms_timer_base + 0x10);
 }
 
 

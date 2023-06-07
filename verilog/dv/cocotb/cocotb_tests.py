@@ -6,3 +6,4 @@ from ms_timer.counter.counter import counter
 from ms_timer.timer.timer import timer
 from ms_timer.timer.timer import timer_irq
 from ms_timer.pwm.pwm import pwm
+from ms_timer.event_capture.event_capture import event_capture
