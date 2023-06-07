@@ -100,7 +100,7 @@ caravel_ips mprj (
     .wbs_adr_i(wbs_adr_i),
     .wbs_dat_i(wbs_dat_i),
     .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o)
+    .wbs_dat_o(wbs_dat_o),
 
     // Logic Analyzer
 
