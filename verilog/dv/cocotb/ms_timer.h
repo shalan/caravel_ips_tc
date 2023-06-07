@@ -73,4 +73,11 @@ void TMR_setInterruptMask(int mask){
     (*(volatile int*)(ms_timer_base + 0x208)) = mask;
 }
 
+void TMR_clearInterrupt(int mask){
+    // bit 0: Time-out Flag
+    // bit 1: Capture Flag
+    // bit 2: Match Flag
+    (*(volatile int*)(ms_timer_base + 0x20C)) = mask;
+}
+
 #endif // MS_TIMER_H

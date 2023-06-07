@@ -120,3 +120,14 @@ async def timer(dut):
                 if seq_list[i] == 1 and seq_list[i + 1] == 1:
                     cocotb.log.error("[TEST] value increase 2 times at periodic count down config")
         await ClockCycles(caravelEnv.clk, 100)
+
+
+@cocotb.test()
+@report_test
+async def timer_irq(dut):
+    caravelEnv = await test_configure(dut, timeout_cycles=1498357)
+    await caravelEnv.release_csb()
+    await caravelEnv.wait_mgmt_gpio(1)
+    cocotb.log.info("[TEST] one shot mode interrupt detected") 
+    await caravelEnv.wait_mgmt_gpio(0)
+    cocotb.log.info("[TEST] periodic mode interrupt detected")

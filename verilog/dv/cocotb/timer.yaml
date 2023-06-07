@@ -1,0 +1,4 @@
+Tests: 
+    - {name: counter, sim: RTL}
+    - {name: timer, sim: RTL}
+    - {name: timer_irq, sim: RTL}
