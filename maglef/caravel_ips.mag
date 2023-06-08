@@ -1,11 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1686236622
+timestamp 1686241747
 << obsli1 >>
 rect 1104 2159 120888 491793
 << obsm1 >>
-rect 934 1164 120888 491824
+rect 934 1028 120888 491824
 << metal2 >>
 rect 2962 0 3018 800
 rect 4066 0 4122 800
@@ -323,7 +323,7 @@ rect 800 10272 121200 15432
 rect 880 9992 121200 10272
 rect 800 6464 121200 9992
 rect 800 6184 121120 6464
-rect 800 1803 121200 6184
+rect 800 1395 121200 6184
 << metal4 >>
 rect 4048 2128 4688 491824
 rect 12208 2128 12848 491824
@@ -341,14 +341,15 @@ rect 101968 2128 102608 491824
 rect 110128 2128 110768 491824
 rect 118288 2128 118928 491824
 << obsm4 >>
-rect 22507 2347 28448 161941
-rect 29248 2347 36608 161941
-rect 37408 2347 44768 161941
-rect 45568 2347 52928 161941
-rect 53728 2347 61088 161941
-rect 61888 2347 69248 161941
-rect 70048 2347 77408 161941
-rect 78208 2347 84397 161941
+rect 21403 2483 28448 136781
+rect 29248 2483 36608 136781
+rect 37408 2483 44768 136781
+rect 45568 2483 52928 136781
+rect 53728 2483 61088 136781
+rect 61888 2483 69248 136781
+rect 70048 2483 77408 136781
+rect 78208 2483 85568 136781
+rect 86368 2483 87157 136781
 << labels >>
 rlabel metal4 s 110128 2128 110768 491824 6 VGND
 port 1 nsew ground default
@@ -662,8 +663,8 @@ port 141 nsew
 string FIXED_BBOX 0 0 122000 494000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 38579772
-string GDS_FILE /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_07_55/results/signoff/caravel_ips.magic.gds
-string GDS_START 1121362
+string GDS_END 38215612
+string GDS_FILE /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/results/signoff/caravel_ips.magic.gds
+string GDS_START 1052048
 << end >>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
- <description>XOR /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_07_55/results/signoff/caravel_ips.gds vs. /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_07_55/results/signoff/caravel_ips.klayout.gds</description>
+ <description>XOR /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/results/signoff/caravel_ips.gds vs. /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/results/signoff/caravel_ips.klayout.gds</description>
  <original-file/>
  <generator>drc: script='/openlane/scripts/klayout/xor.drc'</generator>
  <top-cell>caravel_ips</top-cell>
