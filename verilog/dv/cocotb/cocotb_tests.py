@@ -7,3 +7,4 @@ from ms_timer.timer.timer import timer
 from ms_timer.timer.timer import timer_irq
 from ms_timer.pwm.pwm import pwm
 from ms_timer.event_capture.event_capture import event_capture
+from ms_psram.wr_rd_psram.wr_rd_psram import wr_rd_psram
