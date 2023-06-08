@@ -35,6 +35,7 @@ docker_mounts = \
 	-v $$(realpath $(PWD)/..):$$(realpath $(PWD)/..) \
 	-v $(PDK_ROOT):/pdk \
 	-v $(CARAVEL_ROOT):$(CARAVEL_ROOT) \
+	-v $(HOME):$(HOME) \
 	-v $(OPENLANE_ROOT):/openlane
 
 docker_env = \
