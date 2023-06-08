@@ -1,0 +1,4 @@
+Tests: 
+    - {name: uart_tx, sim: RTL}
+    - {name: uart_rx, sim: RTL}
+    - {name: uart_rx_irq, sim: RTL}

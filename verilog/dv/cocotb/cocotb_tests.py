@@ -2,3 +2,9 @@ from hello_world_uart.hello_world_uart import hello_world_uart
 from ms_uart.uart_tx.uart_tx import uart_tx
 from ms_uart.uart_rx.uart_rx import uart_rx
 from ms_uart.uart_rx_irq.uart_rx_irq import uart_rx_irq
+from ms_timer.counter.counter import counter
+from ms_timer.timer.timer import timer
+from ms_timer.timer.timer import timer_irq
+from ms_timer.pwm.pwm import pwm
+from ms_timer.event_capture.event_capture import event_capture
+from ms_psram.wr_rd_psram.wr_rd_psram import wr_rd_psram

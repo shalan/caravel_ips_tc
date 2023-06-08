@@ -1,2 +1,0 @@
-Tests: 
-    - {name: hello_world_uart, sim: RTL}

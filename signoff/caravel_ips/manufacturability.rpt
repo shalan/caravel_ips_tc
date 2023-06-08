@@ -1,0 +1,19 @@
+Design Name: caravel_ips
+Run Directory: /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20
+----------------------------------------
+
+Magic DRC Summary:
+Source: /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/logs/signoff/41-caravel_ips.lef.lvs.log
+Number of nets: 6007                       |Number of nets: 6007                       
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /home/hosni/caravel_ips/caravel_ips_tc/openlane/caravel_ips/runs/23_06_08_09_20/logs/signoff/43-antenna.log
+Pin violations: 2
+Net violations: 2
