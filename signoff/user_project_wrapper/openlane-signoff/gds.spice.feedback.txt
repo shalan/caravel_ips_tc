@@ -1,0 +1,30 @@
+box 124691 495619 124809 495729
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 124691 495279 124809 495453
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 123771 495619 124349 495729
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 123771 495279 124349 495453
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 122299 495619 123245 495729
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 122299 495279 123245 495453
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 120459 494735 120853 494845
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 120459 495011 120853 495185
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
+box 9875 494531 10085 494641
+feedback add "device missing 1 terminal;
+ connecting remainder to node VGND" pale
+box 9875 494191 10085 494365
+feedback add "device missing 1 terminal;
+ connecting remainder to node VPWR" pale
