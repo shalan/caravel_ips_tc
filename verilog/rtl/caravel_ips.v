@@ -170,10 +170,10 @@
     assign io_oeb[2]       = 1'b0;                 // Output
     assign io_out[8]       = psram_dout[0];        // I/Os 26-29 - Bidirectional
     assign io_oeb[8]       = ~psram_douten[0];
-    assign psram_din[0]     = io_in[26];
+    assign psram_din[0]     = io_in[8];
     assign io_out[9]       = psram_dout[1];
     assign io_oeb[9]       = ~psram_douten[1];
-    assign psram_din[1]     = io_in[27];
+    assign psram_din[1]     = io_in[9];
     assign io_out[0]       = psram_dout[2];
     assign io_oeb[0]       = ~psram_douten[2];
     assign psram_din[2]     = io_in[0];
