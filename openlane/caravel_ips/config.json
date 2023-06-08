@@ -1,0 +1,47 @@
+{
+    "DESIGN_NAME": "caravel_ips",
+    "DESIGN_IS_CORE": 0,
+    "VERILOG_FILES": [
+        "dir::../../../ms_psram_ctrl/src/rtl/ms_psram_ctrl_wb.v",
+        "dir::../../../ms_tmr32/src/rtl/ms_tmr32_wb.v",
+        "dir::../../../ms_tmr32/src/rtl/ms_tmr32.v",
+        "dir::../../../ms_uart/src/rtl/ms_uart_wb.v",
+        "dir::../../../ms_uart/src/rtl/ms_uart.v",
+        "dir::../../verilog/rtl/caravel_ips.v"
+    ],
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+    "QUIT_ON_SYNTH_CHECKS": 0,
+    "RUN_VERILATOR": 0,
+    "SYNTH_BUFFERING": 0,
+    "SYNTH_MAX_TRAN": 1.0,
+    "SYNTH_MAX_FANOUT": 16,
+    "CLOCK_PERIOD": 25,
+    "CLOCK_PORT": "wb_clk_i",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 610 2470",
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+    "FP_PDN_VPITCH": 81.6,
+    "FP_PDN_VWIDTH": 3.2,
+    "FP_PDN_VSPACING": 3.2,
+    "PL_TARGET_DENSITY": 0.4,
+    "PL_RESIZER_SETUP_SLACK_MARGIN": 0.40,
+    "PL_RESIZER_MAX_WIRE_LENGTH": 800,
+    "ROUTING_CORES": 16,
+    "GLB_RESIZER_HOLD_SLACK_MARGIN": 0.30,
+    "GLB_RESIZER_SETUP_SLACK_MARGIN": 0.20,
+    "RT_MAX_LAYER": "met4",
+    "GRT_REPAIR_ANTENNAS": 1,
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "HEURISTIC_ANTENNA_THRESHOLD": 110,
+    "MAGIC_DEF_LABELS": 0,
+    "VDD_NETS": [
+        "VPWR"
+    ],
+    "GND_NETS": [
+        "VGND"
+    ],
+    "IO_SYNC": 0,
+    "BASE_SDC_FILE": "dir::base_caravel_ips.sdc",
+    "RCX_SDC_FILE": "dir::signoff_caravel_ips.sdc",
+    "RUN_CVC": 1
+}
